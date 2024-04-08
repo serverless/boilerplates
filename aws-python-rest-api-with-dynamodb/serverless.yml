@@ -1,4 +1,4 @@
-service: rest
+service: serverless-rest-api-with-dynamodb
 
 frameworkVersion: "3"
 
