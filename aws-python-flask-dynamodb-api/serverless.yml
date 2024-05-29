@@ -1,9 +1,17 @@
 service: aws-python-flask-dynamodb-api
 
-frameworkVersion: '4'
+frameworkVersion: "4"
+
+stages:
+  default:
+    params:
+      tableName: "users-table-${sls:stage}"
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
 
 custom:
-  tableName: 'users-table-${self:provider.stage}'
   wsgi:
     app: app.app
 
@@ -22,9 +30,9 @@ provider:
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
           Resource:
-            - Fn::GetAtt: [ UsersTable, Arn ]
+            - Fn::GetAtt: [UsersTable, Arn]
   environment:
-    USERS_TABLE: ${self:custom.tableName}
+    USERS_TABLE: ${param:tableName}
 
 functions:
   api:
@@ -36,10 +44,6 @@ functions:
       - http:
           path: /{proxy+}
           method: ANY
-
-plugins:
-  - serverless-wsgi
-  - serverless-python-requirements
 
 resources:
   Resources:
@@ -55,4 +59,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:custom.tableName}
+        TableName: ${param:tableName}
