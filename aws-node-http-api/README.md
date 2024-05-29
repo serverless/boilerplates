@@ -33,7 +33,7 @@ Deploying "serverless-http-api" to stage "dev" (us-east-1)
 
 ✔ Service deployed to stack serverless-http-api-dev (91s)
 
-endpoint: GET - https://xiz94rsg9g.execute-api.us-east-1.amazonaws.com/
+endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
 functions:
   hello: serverless-http-api-dev-hello (1.6 kB)
 ```
@@ -64,14 +64,6 @@ serverless dev
 
 This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
 
-In another terminal you can invoke your function by using the following command:
+Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
 
-```
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/hello
-```
-
-Which should result in response similar to the following:
-
-```json
-{ "message": "Go Serverless v4! Your function executed successfully!" }
-```
+When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.

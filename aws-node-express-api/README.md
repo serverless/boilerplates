@@ -15,7 +15,7 @@ authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 
 This template demonstrates how to develop and deploy a simple Node Express API service running on AWS Lambda using the Serverless Framework.
 
-This template configures a single function, `api`, which is responsible for handling all incoming requests using the `httpApi` event. To learn more about `httpApi` event configuration options, please refer to [httpApi event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/). As the event is configured in a way to accept all incoming requests, the Express.js framework is responsible for routing and handling requests internally. This implementation uses the `serverless-http` package to transform the incoming event request payloads to payloads compatible with Express.js. To learn more about `serverless-http`, please refer to corresponding [GitHub repository](https://github.com/dougmoscrop/serverless-http).
+This template configures a single function, `api`, which is responsible for handling all incoming requests using the `httpApi` event. To learn more about `httpApi` event configuration options, please refer to [httpApi event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/). As the event is configured in a way to accept all incoming requests, the Express.js framework is responsible for routing and handling requests internally. This implementation uses the `serverless-http` package to transform the incoming event request payloads to payloads compatible with Express.js. To learn more about `serverless-http`, please refer to the [serverless-http README](https://github.com/dougmoscrop/serverless-http).
 
 ## Usage
 
@@ -40,7 +40,7 @@ Deploying "aws-node-express-api" to stage "dev" (us-east-1)
 
 ✔ Service deployed to stack aws-node-express-api-dev (96s)
 
-endpoint: ANY - https://al7bkh7f57.execute-api.us-east-1.amazonaws.com
+endpoint: ANY - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com
 functions:
   api: aws-node-express-api-dev-api (2.3 kB)
 ```
@@ -61,18 +61,6 @@ Which should result in the following response:
 { "message": "Hello from root!" }
 ```
 
-Calling the `/hello` path with:
-
-```
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/hello
-```
-
-Should result in the following response:
-
-```json
-{ "message": "Hello from path!" }
-```
-
 ### Local development
 
 The easiest way to develop and test your function is to use the `dev` command:
@@ -83,14 +71,6 @@ serverless dev
 
 This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
 
-In another terminal you can invoke your function by using the following command:
+Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
 
-```
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/hello
-```
-
-Which should result in response similar to the following:
-
-```json
-{ "message": "Hello from path!" }
-```
+When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.

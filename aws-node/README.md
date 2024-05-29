@@ -63,17 +63,6 @@ serverless dev
 
 This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
 
-In another terminal you can invoke your function by using the following command:
+Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
 
-```
-serverless invoke --function hello
-```
-
-Which should result in response similar to the following:
-
-```json
-{
-  "statusCode": 200,
-  "body": "{\"message\":\"Go Serverless v4.0! Your function executed successfully!\"}"
-}
-```
+When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.

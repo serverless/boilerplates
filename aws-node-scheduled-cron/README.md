@@ -51,8 +51,6 @@ serverless dev
 
 This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
 
-This function will be called every minute by the scheduler; however, you can also manually invoke the function using this command:
+Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
 
-```
-serverless invoke --function rateHandler
-```
+When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.
