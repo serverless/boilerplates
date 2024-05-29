@@ -23,7 +23,7 @@ This template does not include any kind of persistence (database). For more adva
 In order to deploy the example, you need to run the following command:
 
 ```
-$ serverless deploy
+serverless deploy
 ```
 
 After running deploy, you should see output similar to:

@@ -35,7 +35,7 @@ serverless deploy
 
 After running deploy, you should see output similar to:
 
-```bash
+```
 Deploying "aws-node-express-api" to stage "dev" (us-east-1)
 
 ✔ Service deployed to stack aws-node-express-api-dev (96s)
@@ -51,7 +51,7 @@ _Note_: In current form, after deployment, your API is public and can be invoked
 
 After successful deployment, you can call the created application via HTTP:
 
-```bash
+```
 curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
 ```
 

@@ -58,15 +58,15 @@ serverless invoke local --function rateHandler
 
 After invocation, you should see output similar to:
 
-```bash
-INFO:handler:Your cron function aws-python-scheduled-cron-dev-rateHandler ran at 15:02:43.203145
+```
+INFO:handler:Your cron function ran at 15:02:43.203145
 ```
 
 ### Bundling dependencies
 
 In case you would like to include 3rd party dependencies, you will need to use a plugin called `serverless-python-requirements`. You can set it up by running the following command:
 
-```bash
+```
 serverless plugin install -n serverless-python-requirements
 ```
 

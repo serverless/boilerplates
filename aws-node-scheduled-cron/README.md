@@ -13,7 +13,7 @@ authorAvatar: 'https://avatars3.githubusercontent.com/u/5679763?v=4&s=140'
 
 # Serverless Framework Node Scheduled Cron on AWS
 
-This template demonstrates how to develop and deploy a simple cron-like service running on AWS Lambda using the traditional Serverless Framework.
+This template demonstrates how to develop and deploy a simple cron-like service running on AWS Lambda using the Serverless Framework.
 
 This examples defines a single function, `rateHandler` which is triggered by an event of `schedule` type at a rate of 1 per minute. For detailed information about `schedule` event, please refer to corresponding section of Serverless [docs](https://serverless.com/framework/docs/providers/aws/events/schedule/).
 
@@ -24,7 +24,7 @@ This examples defines a single function, `rateHandler` which is triggered by an 
 In order to deploy the example, you need to run the following command:
 
 ```
-$ serverless deploy
+serverless deploy
 ```
 
 After running deploy, you should see output similar to:

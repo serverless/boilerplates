@@ -19,17 +19,6 @@ This template configures a single function, `api`, which is responsible for hand
 
 ## Usage
 
-### Prerequisites
-
-In order to package your dependencies locally with `serverless-python-requirements`, you need to have `Python3.8` installed locally. You can create and activate a dedicated virtual environment with the following command:
-
-```
-python3.8 -m venv ./venv
-source ./venv/bin/activate
-```
-
-Alternatively, you can also use `dockerizePip` configuration from `serverless-python-requirements`. For details on that, please refer to corresponding [GitHub repository](https://github.com/UnitedIncome/serverless-python-requirements).
-
 ### Deployment
 
 This example is made to work with the Serverless Framework dashboard, which includes advanced features such as CI/CD, monitoring, metrics, etc.
@@ -70,8 +59,8 @@ Packaging Python WSGI handler...
 ✔ Service deployed to stack aws-python-flask-api-dev (104s)
 
 endpoints:
-  ANY - https://ce9zsxqh6e.execute-api.us-east-1.amazonaws.com/dev/
-  ANY - https://ce9zsxqh6e.execute-api.us-east-1.amazonaws.com/dev/{proxy+}
+  ANY - https://xxxxxxxxxe.execute-api.us-east-1.amazonaws.com/dev/
+  ANY - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/{proxy+}
 functions:
   api: aws-python-flask-api-dev-api (41 MB)
 
