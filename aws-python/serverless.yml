@@ -2,7 +2,6 @@ service: aws-python # NOTE: update this with your service name
 
 frameworkVersion: '4'
 
-
 provider:
   name: aws
   runtime: python3.12

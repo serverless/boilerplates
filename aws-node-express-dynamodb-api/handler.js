@@ -1,14 +1,23 @@
-const { DynamoDBClient, PutItemCommand, GetItemCommand } = require("@aws-sdk/client-dynamodb");
+const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+
+const {
+  DynamoDBDocumentClient,
+  GetCommand,
+  PutCommand,
+} = require("@aws-sdk/lib-dynamodb");
+
 const express = require("express");
 const serverless = require("serverless-http");
 
 const app = express();
 
 const USERS_TABLE = process.env.USERS_TABLE;
+const client = new DynamoDBClient();
+const docClient = DynamoDBDocumentClient.from(client);
 
 app.use(express.json());
 
-app.get("/users/:userId", async function (req, res) {
+app.get("/users/:userId", async (req, res) => {
   const params = {
     TableName: USERS_TABLE,
     Key: {
@@ -17,8 +26,8 @@ app.get("/users/:userId", async function (req, res) {
   };
 
   try {
-    const command = new GetItemCommand(params);
-    const { Item } = await client.send(command);
+    const command = new GetCommand(params);
+    const { Item } = await docClient.send(command);
     if (Item) {
       const { userId, name } = Item;
       res.json({ userId, name });
@@ -29,11 +38,11 @@ app.get("/users/:userId", async function (req, res) {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Could not retreive user" });
+    res.status(500).json({ error: "Could not retrieve user" });
   }
 });
 
-app.post("/users", async function (req, res) {
+app.post("/users", async (req, res) => {
   const { userId, name } = req.body;
   if (typeof userId !== "string") {
     res.status(400).json({ error: '"userId" must be a string' });
@@ -43,18 +52,15 @@ app.post("/users", async function (req, res) {
 
   const params = {
     TableName: USERS_TABLE,
-    Item: {
-      userId: userId,
-      name: name,
-    },
+    Item: { userId, name },
   };
 
   try {
-    const command = new PutItemCommand(input);
-    await client.send(command);
+    const command = new PutCommand(params);
+    await docClient.send(command);
     res.json({ userId, name });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ error: "Could not create user" });
   }
 });

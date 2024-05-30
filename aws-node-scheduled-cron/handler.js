@@ -1,6 +1,4 @@
-'use strict';
-
-exports.run = async (event, context) => {
+exports.run = async () => {
   const time = new Date();
-  console.log(`Your cron function "${context.functionName}" ran at ${time}`);
+  console.log(`Your cron function ran at ${time}`);
 };

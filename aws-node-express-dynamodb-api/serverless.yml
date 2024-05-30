@@ -1,8 +1,11 @@
 service: aws-node-express-dynamodb-api
-frameworkVersion: '4'
 
-custom:
-  tableName: 'users-table-${sls:stage}'
+frameworkVersion: "4"
+
+stages:
+  default:
+    params:
+      tableName: "users-table-${sls:stage}"
 
 provider:
   name: aws
@@ -19,15 +22,15 @@ provider:
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
           Resource:
-            - Fn::GetAtt: [ UsersTable, Arn ]
+            - Fn::GetAtt: [UsersTable, Arn]
   environment:
-    USERS_TABLE: ${self:custom.tableName}
+    USERS_TABLE: ${param:tableName}
 
 functions:
   api:
     handler: handler.handler
     events:
-      - httpApi: '*'
+      - httpApi: "*"
 
 resources:
   Resources:
@@ -41,4 +44,4 @@ resources:
           - AttributeName: userId
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        TableName: ${self:custom.tableName}
+        TableName: ${param:tableName}

@@ -2,11 +2,11 @@
 title: 'AWS Simple HTTP Endpoint example in NodeJS'
 description: 'This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.'
 layout: Doc
-framework: v2
+framework: v4
 platform: AWS
 language: nodeJS
 authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
+authorName: 'Serverless, Inc.'
 authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 -->
 
@@ -20,94 +20,50 @@ This template does not include any kind of persistence (database). For more adva
 
 ### Deployment
 
+In order to deploy the example, you need to run the following command:
+
 ```
-$ serverless deploy
+serverless deploy
 ```
 
-After deploying, you should see output similar to:
+After running deploy, you should see output similar to:
 
-```bash
-Serverless: Packaging service...
-Serverless: Excluding development dependencies...
-Serverless: Creating Stack...
-Serverless: Checking Stack create progress...
-........
-Serverless: Stack create finished...
-Serverless: Uploading CloudFormation file to S3...
-Serverless: Uploading artifacts...
-Serverless: Uploading service aws-node-http-api.zip file to S3 (711.23 KB)...
-Serverless: Validating template...
-Serverless: Updating Stack...
-Serverless: Checking Stack update progress...
-.................................
-Serverless: Stack update finished...
-Service Information
-service: serverless-http-api
-stage: dev
-region: us-east-1
-stack: serverless-http-api-dev
-resources: 12
-api keys:
-  None
-endpoints:
-  ANY - https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
+```
+Deploying "serverless-http-api" to stage "dev" (us-east-1)
+
+✔ Service deployed to stack serverless-http-api-dev (91s)
+
+endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
 functions:
-  api: serverless-http-api-dev-hello
-layers:
-  None
+  hello: serverless-http-api-dev-hello (1.6 kB)
 ```
 
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [http event docs](https://www.serverless.com/framework/docs/providers/aws/events/apigateway/).
+_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [HTTP API (API Gateway V2) event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api).
 
 ### Invocation
 
 After successful deployment, you can call the created application via HTTP:
 
-```bash
+```
 curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
 ```
 
-Which should result in response similar to the following (removed `input` content for brevity):
+Which should result in response similar to:
 
 ```json
-{
-  "message": "Go Serverless v2.0! Your function executed successfully!",
-  "input": {
-    ...
-  }
-}
+{ "message": "Go Serverless v4! Your function executed successfully!" }
 ```
 
 ### Local development
 
-You can invoke your function locally by using the following command:
-
-```bash
-serverless invoke local --function hello
-```
-
-Which should result in response similar to the following:
+The easiest way to develop and test your function is to use the `dev` command:
 
 ```
-{
-  "statusCode": 200,
-  "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
+serverless dev
 ```
 
+This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
 
-Alternatively, it is also possible to emulate API Gateway and Lambda locally by using `serverless-offline` plugin. In order to do that, execute the following command:
+Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
 
-```bash
-serverless plugin install -n serverless-offline
-```
-
-It will add the `serverless-offline` plugin to `devDependencies` in `package.json` file as well as will add it to `plugins` in `serverless.yml`.
-
-After installation, you can start local emulation with:
-
-```
-serverless offline
-```
-
-To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
+When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.

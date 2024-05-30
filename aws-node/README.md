@@ -1,20 +1,19 @@
 <!--
 title: 'AWS NodeJS Example'
-description: 'This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework.'
+description: 'This template demonstrates how to deploy a simple NodeJS function running on AWS Lambda using the Serverless Framework.'
 layout: Doc
-framework: v2
+framework: v4
 platform: AWS
 language: nodeJS
 priority: 1
 authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
+authorName: 'Serverless, Inc.'
 authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 -->
 
-
 # Serverless Framework AWS NodeJS Example
 
-This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework. The deployed function does not include any event definitions as well as any kind of persistence (database). For more advanced configurations check out the [examples repo](https://github.com/serverless/examples/) which includes integrations with SQS, DynamoDB or examples of functions that are triggered in `cron`-like manner. For details about configuration of specific `events`, please refer to our [documentation](https://www.serverless.com/framework/docs/providers/aws/events/).
+This template demonstrates how to deploy a simple NodeJS function running on AWS Lambda using the Serverless Framework. The deployed function does not include any event definitions or any kind of persistence (database). For more advanced configurations check out the [examples repo](https://github.com/serverless/examples/) which include use cases like API endpoints, workers triggered by SQS, persistence with DynamoDB, and scheduled tasks. For details about configuration of specific events, please refer to our [documentation](https://www.serverless.com/framework/docs/providers/aws/events/).
 
 ## Usage
 
@@ -23,43 +22,25 @@ This template demonstrates how to deploy a NodeJS function running on AWS Lambda
 In order to deploy the example, you need to run the following command:
 
 ```
-$ serverless deploy
+serverless deploy
 ```
 
 After running deploy, you should see output similar to:
 
-```bash
-Serverless: Packaging service...
-Serverless: Excluding development dependencies...
-Serverless: Creating Stack...
-Serverless: Checking Stack create progress...
-........
-Serverless: Stack create finished...
-Serverless: Uploading CloudFormation file to S3...
-Serverless: Uploading artifacts...
-Serverless: Uploading service aws-node.zip file to S3 (711.23 KB)...
-Serverless: Validating template...
-Serverless: Updating Stack...
-Serverless: Checking Stack update progress...
-.................................
-Serverless: Stack update finished...
-Service Information
-service: aws-node
-stage: dev
-region: us-east-1
-stack: aws-node-dev
-resources: 6
+```
+Deploying "aws-node" to stage "dev" (us-east-1)
+
+✔ Service deployed to stack aws-node-dev (90s)
+
 functions:
-  api: aws-node-dev-hello
-layers:
-  None
+  hello: aws-node-dev-hello (1.5 kB)
 ```
 
 ### Invocation
 
 After successful deployment, you can invoke the deployed function by using the following command:
 
-```bash
+```
 serverless invoke --function hello
 ```
 
@@ -67,24 +48,21 @@ Which should result in response similar to the following:
 
 ```json
 {
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": {}\n}"
+  "statusCode": 200,
+  "body": "{\"message\":\"Go Serverless v4.0! Your function executed successfully!\"}"
 }
 ```
 
 ### Local development
 
-You can invoke your function locally by using the following command:
-
-```bash
-serverless invoke local --function hello
-```
-
-Which should result in response similar to the following:
+The easiest way to develop and test your function is to use the Serverless Framework's `dev` command:
 
 ```
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
+serverless dev
 ```
+
+This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
+
+Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
+
+When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.
