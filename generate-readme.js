@@ -2,20 +2,14 @@ const fs = require("fs");
 const path = require("path");
 const url = require("url");
 const markdownMagic = require("markdown-magic"); // eslint-disable-line
-const globby = require("markdown-magic").globby; // eslint-disable-line
 
-const toTitleCase = (str) => {
-  // eslint-disable-line
-  return str.replace(
+const toTitleCase = (str) =>
+  str.replace(
     /\w\S*/g,
     (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
   );
-};
 
-const formatPluginName = (string) => {
-  // eslint-disable-line
-  return toTitleCase(string.replace(/-/g, " "));
-};
+const formatPluginName = (string) => toTitleCase(string.replace(/-/g, " "));
 
 const username = (repo) => {
   if (!repo) {
@@ -34,6 +28,9 @@ const username = (repo) => {
 };
 
 const getRuntime = (dirname) => {
+  if (!dirname) {
+    return "unknown";
+  }
   if (dirname.match(/node/)) {
     return "nodeJS";
   } else if (dirname.match(/python/)) {
@@ -49,7 +46,7 @@ const getRuntime = (dirname) => {
   } else if (dirname.match(/dotnet/)) {
     return "dotnet";
   }
-  return "nodeJS";
+  return "unknown";
 };
 
 const config = {
@@ -61,26 +58,23 @@ const config = {
     <!-- AUTO-GENERATED-CONTENT:END -->
      */
     SERVERLESS_EXAMPLE_TABLE() {
-      const examples = globby.sync([
-        "**/package.json",
-        "!node_modules/**/package.json",
-        "!**/node_modules/**/package.json",
-        "!package.json",
-        "!**/bin/**/netcoreapp2.1/**/package.json",
-      ]);
+      const examplesPath = path.join(__dirname, "examples.json");
+      const examples = JSON.parse(fs.readFileSync(examplesPath, "utf8"));
+
       // Make table header
       let md = "| Example | Runtime  |\n";
       md += "|:--------------------------- |:-----|\n";
       examples.forEach((example) => {
-        const data = JSON.parse(fs.readFileSync(example, "utf8"));
-        const dirname = path.dirname(example);
+        const dirname = example.dirname || "";
         const exampleUrl = `https://github.com/serverless/examples/tree/master/${dirname}`;
         const runtime = getRuntime(dirname);
-        const description = data.description ? `<br/> ${data.description}` : "";
+        const description = example.description
+          ? `<br/> ${example.description}`
+          : "";
         // add table rows
-        md += `| [${formatPluginName(
-          data.name
-        )}](${exampleUrl}) ${description} | ${runtime} |\n`;
+        md += `| [${
+          example.title || formatPluginName(example.name)
+        }](${exampleUrl}) ${description} | ${runtime} |\n`;
       });
 
       return md;
