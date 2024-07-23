@@ -228,7 +228,7 @@
     "authorAvatar": "https://avatars0.githubusercontent.com/u/8188?v=4&s=140"
   },
   {
-    "title": "Serverless Framework Node Express API on AWS",
+    "title": "Node Express API on AWS",
     "name": "aws-node-express-api",
     "description": "This template demonstrates how to develop and deploy a simple Node Express API running on AWS Lambda using the Serverless Framework.",
     "githubUrl": "https://github.com/serverless/examples/tree/master/aws-node-express-api",
@@ -241,7 +241,7 @@
     "priority": 1
   },
   {
-    "title": "Serverless Framework Node Express API service backed by DynamoDB on AWS",
+    "title": "Node Express API service backed by DynamoDB on AWS",
     "name": "aws-node-express-dynamodb-api",
     "description": "This template demonstrates how to develop and deploy a simple Node Express API service backed by DynamoDB running on AWS Lambda using the Serverless Framework.",
     "githubUrl": "https://github.com/serverless/examples/tree/master/aws-node-express-dynamodb-api",
@@ -656,7 +656,7 @@
     "authorAvatar": "https://avatars0.githubusercontent.com/u/26760571?v=4&s=140"
   },
   {
-    "title": "Serverless Framework Node SQS Producer Consumer on AWS",
+    "title": "Node SQS Producer Consumer on AWS",
     "name": "aws-node-sqs-worker",
     "description": "This template demonstrates how to develop and deploy a simple SQS-based producer-consumer service running on AWS Lambda using the traditional Serverless Framework.",
     "githubUrl": "https://github.com/serverless/examples/tree/master/aws-node-sqs-worker",
@@ -864,7 +864,7 @@
     "authorAvatar": "https://avatars3.githubusercontent.com/u/30560831?v=4&s=140"
   },
   {
-    "title": "Serverless Framework Python Flask API on AWS",
+    "title": "Python Flask API on AWS",
     "name": "aws-python-flask-api",
     "description": "This template demonstrates how to develop and deploy a simple Python Flask API running on AWS Lambda using the Serverless Framework.",
     "githubUrl": "https://github.com/serverless/examples/tree/master/aws-python-flask-api",
@@ -877,7 +877,7 @@
     "priority": 2
   },
   {
-    "title": "Serverless Framework Python Flask API backed by DynamoDB on AWS",
+    "title": "Python Flask API backed by DynamoDB on AWS",
     "name": "aws-python-flask-dynamodb-api",
     "description": "This template demonstrates how to develop and deploy a simple Python Flask API service backed by DynamoDB running on AWS Lambda using the Serverless Framework.",
     "githubUrl": "https://github.com/serverless/examples/tree/master/aws-python-flask-dynamodb-api",
@@ -1013,7 +1013,7 @@
     "authorAvatar": "https://avatars0.githubusercontent.com/u/8188?v=4&s=140"
   },
   {
-    "title": "Serverless Framework Python SQS Producer Consumer on AWS",
+    "title": "Python SQS Producer Consumer on AWS",
     "name": "aws-python-sqs-worker",
     "description": "This template demonstrates how to develop and deploy a simple SQS-based producer-consumer service running on AWS Lambda using the traditional Serverless Framework.",
     "githubUrl": "https://github.com/serverless/examples/tree/master/aws-python-sqs-worker",
@@ -1075,7 +1075,7 @@
     "authorAvatar": "https://avatars0.githubusercontent.com/u/1994863?v=4&s=140"
   },
   {
-    "title": "Serverless Framework Ruby Sinatra API backed by DynamoDB on AWS",
+    "title": "Ruby Sinatra API backed by DynamoDB on AWS",
     "name": "aws-ruby-sinatra-dynamodb-api",
     "description": "This template demonstrates how to develop and deploy a simple Ruby Sinatra API service backed by DynamoDB running on AWS Lambda using the traditional Serverless Framework.",
     "githubUrl": "https://github.com/serverless/examples/tree/master/aws-ruby-sinatra-dynamodb-api",
