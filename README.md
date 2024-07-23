@@ -1,4 +1,19 @@
-[Website](http://www.serverless.com) • [Email Updates](http://eepurl.com/b8dv4P) • [Gitter](https://gitter.im/serverless/serverless) • [Forum](http://forum.serverless.com) • [Meetups](https://github.com/serverless/meetups) • [Twitter](https://twitter.com/goserverless) • [Facebook](https://www.facebook.com/serverless) • [Contact Us](mailto:hello@serverless.com)
+<br/>
+
+<div align="center">
+  <a aria-label="Serverless.com" href="https://serverless.com">Website</a>
+  &nbsp;•&nbsp;
+  <a aria-label="Serverless Framework Documentation" href="https://serverless.com/framework/docs/">Documentation</a>
+  &nbsp;•&nbsp;
+  <a aria-label="Serverless Inc Twitter" href="https://twitter.com/goserverless">X / Twitter</a>
+  &nbsp;•&nbsp;
+  <a aria-label="Serverless Framework Community Slack" href="https://join.slack.com/t/serverless-contrib/shared_invite/zt-2jpqamlep-SRbvbcFGDXmpEXErcL4WWQ">Community Slack</a>
+  &nbsp;•&nbsp;
+  <a aria-label="Serverless Framework Community Forum" href="https://forum.serverless.com">Forum</a>
+</div>
+
+<br/>
+<br/>
 
 ![examples-hero](https://github.com/user-attachments/assets/83d9a859-a801-4abd-b812-c4498bb032c3)
 
