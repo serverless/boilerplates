@@ -238,7 +238,7 @@
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
     "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 1
+    "priority": 2
   },
   {
     "title": "Node Express API service backed by DynamoDB on AWS",
@@ -251,7 +251,7 @@
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
     "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 1
+    "priority": 3
   },
   {
     "title": "AWS Fetch image from URL and upload to S3 example in NodeJS",
@@ -533,7 +533,7 @@
     "authorLink": "https://github.com/0dj0bz",
     "authorName": "Rob Abbott",
     "authorAvatar": "https://avatars3.githubusercontent.com/u/5679763?v=4&s=140",
-    "priority": 1
+    "priority": 4
   },
   {
     "title": "AWS Node Scheduled Weather example in NodeJS",
@@ -837,7 +837,7 @@
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
     "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 1
+    "priority": 5
   },
   {
     "title": "AWS Serverless Alexa Skill example in Python",
@@ -874,7 +874,7 @@
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
     "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 2
+    "priority": 7
   },
   {
     "title": "Python Flask API backed by DynamoDB on AWS",
@@ -887,7 +887,7 @@
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
     "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 2
+    "priority": 8
   },
   {
     "title": "Simple LINE bot",
@@ -985,7 +985,7 @@
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
     "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 2
+    "priority": 6
   },
   {
     "title": "AWS Python Scheduled Cron example in Python",
@@ -998,7 +998,7 @@
     "authorLink": "https://github.com/rupakg",
     "authorName": "Rupak Ganguly",
     "authorAvatar": "https://avatars0.githubusercontent.com/u/8188?v=4&s=140",
-    "priority": 2
+    "priority": 9
   },
   {
     "title": "AWS Simple HTTP Endpoint example in Python",
@@ -1048,7 +1048,7 @@
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
     "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 2
+    "priority": 10
   },
   {
     "title": "Ruby LINE bot",
