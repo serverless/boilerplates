@@ -323,8 +323,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/chief-wizard",
     "authorName": "Chief Wizard",
-    "authorAvatar": "https://avatars3.githubusercontent.com/u/40777040?v=4&s=140",
-    "priority": 1
+    "authorAvatar": "https://avatars3.githubusercontent.com/u/40777040?v=4&s=140"
   },
   {
     "title": "GraphQL query endpoint in NodeJS on AWS with DynamoDB",
@@ -336,8 +335,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/gismoranas",
     "authorName": "Gismo Ranas",
-    "authorAvatar": "https://avatars0.githubusercontent.com/u/5903107?v=4&s=140",
-    "priority": 10
+    "authorAvatar": "https://avatars0.githubusercontent.com/u/5903107?v=4&s=140"
   },
   {
     "title": "Node.js AWS Lambda connecting to Heroku Postgres",
@@ -493,8 +491,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
-    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 1
+    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4"
   },
   {
     "title": "AWS Simple HTTP Endpoint example in NodeJS",
@@ -519,8 +516,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/ac360",
     "authorName": "Austen Collins",
-    "authorAvatar": "https://avatars3.githubusercontent.com/u/2752551?v=4&s=140",
-    "priority": 1
+    "authorAvatar": "https://avatars3.githubusercontent.com/u/2752551?v=4&s=140"
   },
   {
     "title": "AWS Node Scheduled Cron example in NodeJS",
@@ -665,8 +661,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
-    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 1
+    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4"
   },
   {
     "title": "AWS Stripe Integration example in NodeJS",
@@ -714,8 +709,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/darrenhgc",
     "authorName": "Darren Holland",
-    "authorAvatar": "https://avatars0.githubusercontent.com/u/28113106?v=4&s=140",
-    "priority": 1
+    "authorAvatar": "https://avatars0.githubusercontent.com/u/28113106?v=4&s=140"
   },
   {
     "title": "Joke Twitter Bot",
@@ -823,8 +817,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/eahefnawy",
     "authorName": "Eslam λ Hefnawy",
-    "authorAvatar": "https://avatars3.githubusercontent.com/u/2312463?v=4&s=140",
-    "priority": 10
+    "authorAvatar": "https://avatars3.githubusercontent.com/u/2312463?v=4&s=140"
   },
   {
     "title": "AWS NodeJS Example",
@@ -971,8 +964,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
-    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 2
+    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4"
   },
   {
     "title": "AWS Simple HTTP Endpoint example in Python",
@@ -1022,8 +1014,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
-    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 2
+    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4"
   },
   {
     "title": "TODO",
@@ -1084,8 +1075,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/serverless",
     "authorName": "Serverless, inc.",
-    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4",
-    "priority": 5
+    "authorAvatar": "https://avatars1.githubusercontent.com/u/13742415?s=200&v=4"
   },
   {
     "title": "AWS Ruby scheduled cron example backed by DynamoDB",
@@ -1121,8 +1111,7 @@
     "platform": "aws",
     "authorLink": "https://github.com/pigius",
     "authorName": "Daniel Aniszkiewicz",
-    "authorAvatar": "https://avatars.githubusercontent.com/u/8863200?v=4&s=140",
-    "priority": 5
+    "authorAvatar": "https://avatars.githubusercontent.com/u/8863200?v=4&s=140"
   },
   {
     "title": "AWS Serverless Boilerplate example in Rust",
