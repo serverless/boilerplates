@@ -2813,5 +2813,17 @@
     "authorName": "Dylan Myers",
     "authorAvatar": "https://avatars.githubusercontent.com/u/7024578?v=4",
     "community": true
+  },
+  {
+    "title": "Serverless Compose of Serverless, Cloudformation, and SAM",
+    "name": "compose-multiframework",
+    "description": "This template shows how to compose multiple services using different frameworks, in a single project",
+    "githubUrl": "https://github.com/serverless/examples/tree/master/compose-multiframework",
+    "framework": "",
+    "language": "node",
+    "platform": "aws",
+    "authorLink": "https://github.com/eahefnawy",
+    "authorName": "Eslam λ Hefnawy",
+    "authorAvatar": "https://avatars.githubusercontent.com/u/2312463?v=4"
   }
 ]
