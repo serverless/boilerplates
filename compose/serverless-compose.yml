@@ -1,0 +1,31 @@
+# This example shows how to use Serverless Compose
+# to compose 3 services together:
+#   - A CloudFormation service
+#   - A traditional Serverless Framework service
+#   - A SAM service
+# It specifically shows how to pass parameters between services
+# and how to reference outputs from one service in another service.
+
+stages:
+  default:
+    params:
+      stageLabel: "testing"
+  prod:
+    params:
+      stageLabel: "production"
+
+services:
+  cloudformation-compose-service:
+    path: cloudformation-compose-service
+    params:
+      tableNamePrefix: compose-shared-table
+
+  traditional-compose-service:
+    path: traditional-compose-service
+    params:
+      tableName: ${cloudformation-compose-service.TableName}
+
+  sam-compose-service:
+    path: sam-compose-service
+    params:
+      tableName: ${cloudformation-compose-service.TableName}
