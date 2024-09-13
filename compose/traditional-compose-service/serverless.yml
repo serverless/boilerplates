@@ -1,0 +1,16 @@
+service: traditional-compose-service
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+functions:
+  hello:
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+    environment:
+      TABLE_NAME: ${param:tableName}
+      STAGE_LABEL: ${param:stageLabel}
