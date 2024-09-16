@@ -1,4 +1,4 @@
-service: traditional-compose-service
+service: traditional
 
 provider:
   name: aws
@@ -12,5 +12,7 @@ functions:
           path: /
           method: get
     environment:
+      # We are using the output of the shared resources CloudFormation template
+      # that is passed down from Serverless Compose, and the staged param "domain".
       TABLE_NAME: ${param:tableName}
-      STAGE_LABEL: ${param:stageLabel}
+      DOMAIN: ${param:domain}
