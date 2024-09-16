@@ -1,0 +1,27 @@
+# This is a shared CloudFormation service that is being referenced by the traditional and SAM services.
+# This is a good place to put shared resources like DynamoDB tables, S3 buckets, etc.
+# that will be used by other services.
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  SharedTable:
+    Type: "AWS::DynamoDB::Table"
+    Properties:
+      # We are using the parameter passed down from Serverless Compose, and the current stage.
+      # To construct the final table name.
+      TableName: ${param:tableNamePrefix}-${sls:stage}
+      AttributeDefinitions:
+        - AttributeName: "Id"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "Id"
+          KeyType: "HASH"
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+# We are outputting the table name so that other services can reference it.
+Outputs:
+  TableName:
+    Value: !Ref SharedTable

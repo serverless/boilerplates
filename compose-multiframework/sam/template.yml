@@ -1,9 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
-Description: >
-  sam-app
-
-  Sample SAM Template for sam-app
 
 Globals:
   Function:
@@ -18,8 +14,10 @@ Resources:
       Runtime: nodejs20.x
       Environment:
         Variables:
+          # We are using the output of the shared resources CloudFormation template
+          # that is passed down from Serverless Compose, and the staged param "domain".
           TABLE_NAME: ${param:tableName}
-          STAGE_LABEL: ${param:stageLabel}
+          DOMAIN: ${param:domain}
       Architectures:
         - x86_64
       Events:

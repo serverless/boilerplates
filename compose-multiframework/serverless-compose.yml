@@ -1,31 +1,45 @@
-# This example shows how to use Serverless Compose
-# to compose 3 services together:
-#   - A CloudFormation service
-#   - A traditional Serverless Framework service
-#   - A SAM service
-# It specifically shows how to pass parameters between services
-# and how to reference outputs from one service in another service.
+# Serverless Framework can deploy multiple types of templates:
+#   1) Traditional Serverless Framework templates
+#   2) AWS Cloudformation Templates
+#   3) AWS SAM Templates.
+# This is useful if your organization is using these different templates and wants one tool to standardize around.
+# Here, we use Serverless Framework Compose (serverless.com/framework/docs/guides/compose) to deploy three different template types in a single deploy command.
+# Deployments happen in parallel by default. You can also share outputs from one Service to another, across template types.
+# In this case, Compose will auto-determine the correct order to deploy each Service.
 
 stages:
   default:
     params:
-      stageLabel: "testing"
+      domain: "serverless.dev"
   prod:
     params:
-      stageLabel: "production"
+      domain: "serverless.com"
 
 services:
-  cloudformation-compose-service:
-    path: cloudformation-compose-service
+  # Framework: AWS CloudFormation
+  # The service name here will be used as the underlying cloudformation stack name.
+  # Make sure it’s unique so it doesn’t collide, and accidently update another stack.
+  # If you change it, make sure you update the references in other services.
+  shared-resources-example:
+    path: cloudformation
     params:
-      tableNamePrefix: compose-shared-table
+      # We are passing a simple string parameter to the CloudFormation template.
+      # If you open the template file, you will see that we reference it with ${param:tableNamePrefix}
+      tableNamePrefix: shared-table
 
-  traditional-compose-service:
-    path: traditional-compose-service
+  # Framework: Serverless Framework Traditional
+  traditional:
+    path: traditional
     params:
-      tableName: ${cloudformation-compose-service.TableName}
+      # We are passing a reference to the shared CloudFormation stack output to the traditional service.
+      # The shared CloudFormation stack is deployed first, and the output is passed to this service.
+      tableName: ${shared-resources-example.TableName}
 
-  sam-compose-service:
-    path: sam-compose-service
+  # Framework: AWS SAM
+  sam:
+    path: sam
     params:
-      tableName: ${cloudformation-compose-service.TableName}
+      # We do the same here, passing the shared CloudFormation stack output to the SAM service.
+      # Both the traditional and SAM services will be deployed in parallel.
+      # As they both depend on the same shared service.
+      tableName: ${shared-resources-example.TableName}
